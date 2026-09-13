@@ -1,128 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radar da Vida Escolar</title>
-    <style>
-        body {
-            background-color: #F2F2F2;
-            font-family: Arial, sans-serif;
-        }
-        header {
-            background-color: #1F4E79;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 { 
-            color: #FFFFFF; 
-            margin: 0;
-        }
-        main { 
-            padding: 20px; 
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .cartao {
-            background-color: #FFFFFF;
-            padding: 15px;
-            border-left: 5px solid #1F4E79;
-            margin-bottom: 15px;
-            border-radius: 0 5px 5px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .cartao h2 {
-            color: #1F4E79;
-            margin-top: 0;
-        }
-        .contagem {
-            font-weight: bold;
-            color: #1F4E79;
-            font-size: 20px;
-        }
-        button {
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 5px;
-            transition: background-color 0.2s;
-        }
-        .apoiar {
-            background-color: #1F4E79;
-            color: white;
-        }
-        .apoiar:hover { 
-            background-color: #2E75B6; 
-        }
-        .remover {
-            background-color: #D9534F;
-            color: white;
-        }
-        .remover:hover {
-            background-color: #C9302C;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Radar da Vida Escolar</h1>
-    </header>
-    <main>
-        <div class="cartao">
-            <h2>Bebedouro do corredor</h2>
-            <p>O bebedouro vaza desde março e forma poça no piso.</p>
-            <p>Apoios: <span class="contagem">0</span></p>
-            <button class="apoiar">Apoiar</button>
-            <button class="remover">Remover apoio</button>
-        </div>
+# Tecnologia e Inovação | 1J | 3º trimestre
 
-        <div class="cartao">
-            <h2>Fila da cantina</h2>
-            <p>A fila toma quase todo o intervalo dos alunos.</p>
-            <p>Apoios: <span class="contagem">0</span></p>
-            <button class="apoiar">Apoiar</button>
-            <button class="remover">Remover apoio</button>
-        </div>
+Repositório da disciplina. Tudo o que você produzir no trimestre fica aqui.
 
-        <div class="cartao">
-            <h2>Iluminação da quadra</h2>
-            <p>Metade das lâmpadas está queimada há dois meses.</p>
-            <p>Apoios: <span class="contagem">0</span></p>
-            <button class="apoiar">Apoiar</button>
-            <button class="remover">Remover apoio</button>
-        </div>
-    </main>
+## Como está organizado
 
-    <script>
-        // Função para os botões de Apoiar
-        let botoesApoiar = document.querySelectorAll('.apoiar');
-        botoesApoiar.forEach(function(botao) {
-            botao.addEventListener('click', function() {
-                let cartao = botao.parentElement;
-                let display = cartao.querySelector('.contagem');
-                let valor = Number(display.textContent);
-                valor++;
-                display.textContent = valor;
-            });
-        });
+```
+index.html        o Radar da Vida Escolar. Um arquivo só, o mesmo o trimestre inteiro
+exercicios/       as respostas dos exercícios, um arquivo por aula
+trabalho/         os entregáveis do dossiê, numerados
+img/              as imagens que você usar na página
+```
 
-        // Função para os botões de Remover
-        let botoesRemover = document.querySelectorAll('.remover');
-        botoesRemover.forEach(function(botao) {
-            botao.addEventListener('click', function() {
-                let cartao = botao.parentElement;
-                let display = cartao.querySelector('.contagem');
-                let valor = Number(display.textContent);
-                
-                // Evita valores negativos
-                if (valor > 0) {
-                    valor--;
-                    display.textContent = valor;
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+## O index.html é o seu projeto
+
+Você não copia, não duplica e não cria pasta nova a cada aula. Abre o mesmo arquivo e melhora um pedaço dele.
+
+É essa página que você vai abrir na defesa no fim do trimestre. O caminho que ela fez até lá fica guardado nos seus commits.
+
+## Os exercícios
+
+Uma aula, um arquivo: `exercicios/aula01.js`, `exercicios/aula02.js`, e assim por diante.
+
+Cada questão abre com um marcador. Sem ele eu não acho a sua resposta e não corrijo:
+
+```js
+// ex1
+(sua resposta aqui)
+
+// ex2
+(sua resposta aqui)
+```
+
+Quando o exercício mandar mexer no Radar, a resposta é a própria página: você altera o `index.html` e no arquivo de exercícios escreve só o que fez.
+
+Exercício vale por entrega, não por acerto. Você não perde nota por errar, perde por não fazer.
+
+## Nome de arquivo
+
+Tudo minúsculo, sem acento, sem espaço, com o número de dois dígitos. É `aula03.js`, não `Aula3.js` nem `aula 03 final v2.js`. A página chama `index.html`, nunca `Index.html` nem `pagina.html`.
+
+Isso não é frescura de professor. É assim que o computador acha arquivo, pelo nome exato. Nome com maiúscula ou espaço funciona na sua máquina e quebra na minha, e você vai jurar que estava certo, porque estava, aí.
+
+## Este arquivo aqui não é a sua página
+
+Todo repositório nasce com um README, e o GitHub mostra o conteúdo dele como texto na entrada.
+
+Se você colar HTML aqui dentro, nada dá erro: o arquivo salva, o commit sobe, aparece coisa na tela. Só que o navegador nunca vai abrir isso como página, porque `.md` não é `.html`. A sua página é o `index.html`.
+
+## Prazo
+
+O laboratório fica aberto por duas semanas. Atraso é aceito por mais uma semana, valendo no máximo 70%. Depois disso, fecha.
+
+Tentativas ilimitadas dentro do prazo. Envie cedo e envie errado: melhor descobrir na segunda-feira que no dia da entrega.
+
+## Na defesa
+
+Eu escolho cinco linhas do seu arquivo e faço duas perguntas, sempre as mesmas: por que essa linha existe, e o que acontece se eu mudar esse valor.
+
+Pode usar livro, internet, colega e inteligência artificial. O que não pode é entregar o que você não sabe explicar.
+
+Professor Diego
